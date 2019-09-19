@@ -1,0 +1,34 @@
+Answers for practice on Compass
+
+Pareto Optimum - impossible to make outcome better for one without making it worse for other
+Nash Equilibrium - not Pareto Optimum
+
+1. Known - know rules, observable - know world state. Both can exist like Battleship
+2. World state vs. search tree node
+  Node contains world state
+4. a. Same complexity
+   b. BFS better in worst case
+   c. BFS better in worst case
+DFS has bad worst case with some very long paths
+Iterative deepening makes this better, complexity of BFS * 2
+DFS has much lower memory cost than BFS (1 expanded path vs. whole tree)
+5. Greedy Best First - h(n)
+A* - f(n) = h(n) + g(n)
+  g(n) = path cost to n
+  h(n) <= path cost from n to g
+Standard GBFS - choose child with lowest h(n)
+Repaired GBFS - choose child with lowest g(n) + h(n)
+  (Perhaps disregard the statement below?)
+  A* like this, but A* continues until there is no remaining better path
+  Disregarded because the first one we will find will be optimum if
+A* admissible - first path to goal is best IF you re-search already explored states
+  h(n) <= path cost at the end
+A* consistent - first path to goal is best EVEN IF you never repeat a state
+  Path from beginning also bounded
+7. Local search = making small changes to get to goal?
+  Local search might be good for CSP's with multiple solutions
+8. Branching factor = 25
+15. Mixed strategy - A chooses R1 with probability P, R2 with probability (1-P)
+  such that E[utility to B(R1)] = E[utility to B(R2)]
+  E[utility to B of R1] = (utility if A=R1)*P(A=R1) + (utility if A=R2)*P(A=R2)
+  = (1/2)*P + 1*(1-P) so (1/2)P + 1(1-P) = 1*P + (1/2)*(1-P) => P = 1/2
